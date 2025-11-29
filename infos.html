@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Coaching</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu -->
+
+    <nav class="menu">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="infos.html">Informations</a></li>
+      <li class="dropdown">
+        <a href="#" id="coachingBtn">Coaching ▾</a>
+        <ul class="dropdown-content" id="coachingMenu">
+          <li><a href="mardi.html">Mardis</a></li>
+          <li><a href="mercredi.html">Mercredis</a></li>
+          <li><a href="samedi.html">Samedis</a></li>
+          <li><a href="dimanche.html">Dimanches</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Fin du menu -->
+    <p id="texte_bienvenue">
+        Bonjour ! Si vous voyez ce site, ça veut dire que vous chercher potentiellement que je vous coach / que je coach votre enfant 💪💪. J'ai conçu ce site afin de faciliter la communication et mieux plannifier mes cours 📆. Ce site est ainsi relié à un Agenda Google qui permet la prise de rdv de manière rapide et facile !
+        <br><br>Au niveau des informations principales, le lieu des cours est la P2 de Fribourg et le tarif est de <b>60 frs / heure</b> (divisé par le nombre de participants) + le prix de l'entrée sur piste. Les cours ont lieu en principe sur <b>demi-piste</b> sauf les dimanches 8h30-11h00.
+        <br><br>Afin d'être sûr que tout est en ordre, j'envoie systématiquement un message via whatsApp à chaque fois que je reçoit une demande de coaching. Si vous ne recevez aucun message de ma part 3 jours après votre demande, cela veut dire soit que quelque chose au niveau informatique n'a pas fonctionné, soit que je suis mort... (partez du principe que je ne suis pas mort 😅)
+        <br><br>Le patin est un sport complexe et la communication Coachs-Athlètes-Parents est donc extrêmement importante. Je reste donc bien entendu à disposition pour toutes questions ☺️
+    </p>
+
+    <p id="construction">⚠ Le site est actuellemnent en construction ⚠</p>
+
+
+  <script>
+    //Pour le menu déroulant 
+    const coachingBtn = document.getElementById('coachingBtn');
+    const coachingMenu = document.getElementById('coachingMenu');
+
+    coachingBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (coachingMenu.style.visibility === 'visible') {
+        coachingMenu.style.visibility = 'hidden';
+        coachingMenu.style.opacity = '0';
+      } else {
+        coachingMenu.style.display = 'block'; // force le bloc
+        coachingMenu.style.visibility = 'visible';
+        coachingMenu.style.opacity = '1';
+      }
+    });
+
+    // Fermer si on clique ailleurs
+    document.addEventListener('click', function(e) {
+      if (!coachingBtn.contains(e.target) && !coachingMenu.contains(e.target)) {
+        coachingMenu.style.visibility = 'hidden';
+        coachingMenu.style.opacity = '0';
+      }
+    });
+    //fin du menu déroulant
+  </script>
+</body>
+</html>

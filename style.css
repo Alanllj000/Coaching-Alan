@@ -1,0 +1,110 @@
+/* ====== MENU PRINCIPAL FIXE ====== */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 1000;
+  min-height: 10vh;
+}
+
+/* Liste horizontale */
+.menu ul {
+  display: flex;
+  justify-content: space-between; /* répartit les éléments sur toute la largeur */
+  align-items: center;            /* aligne verticalement */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 10vh;
+}
+
+/* Boutons du menu principal */
+.menu > ul > li {
+  flex: 1;
+  text-align: center;
+  position: relative; /* nécessaire pour le dropdown */
+}
+
+.menu > ul > li > a {
+  display: block;
+  padding: 2vh 3vw;   /* plus grands */
+  font-size: clamp(1rem, 2vw + 1vh, 1.6rem);   
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.menu > ul > li > a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* ====== MENU DÉROULANT ====== */
+.dropdown-content {
+  display: none;          /* invisible par défaut */
+  flex-direction: column; /* s'affiche verticalement quand activé */
+  position: absolute;
+  top: 100%;              /* juste sous le bouton parent */
+  left: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Liens du dropdown (restent petits) */
+.dropdown-content li a {
+  display: block;
+  padding: 10px;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);        /* taille normale */
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #555;
+}
+
+/* ====== SECTIONS DE CONTENU ====== */
+#texte_bienvenue {
+  margin-top: 10vh;
+  max-width: 95vw;
+  margin-left: auto;
+  margin-right: auto; /* centre horizontalement */
+  justify-content: center;
+  text-align: justify;
+  display: none;
+}
+
+#Bienvenue {
+  margin-top: 11vh;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+#construction {
+  margin-top: 30vh;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+#calendrier {
+  border: none;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: block;
+  margin-top: 10vh;
+}

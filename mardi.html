@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Coaching</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu -->
+
+    <nav class="menu">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="infos.html">Informations</a></li>
+      <li class="dropdown">
+        <a href="#" id="coachingBtn">Coaching ▾</a>
+        <ul class="dropdown-content" id="coachingMenu">
+          <li><a href="mardi.html">Mardis</a></li>
+          <li><a href="mercredi.html">Mercredis</a></li>
+          <li><a href="samedi.html">Samedis</a></li>
+          <li><a href="dimanche.html">Dimanches</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Fin du menu -->
+
+    <!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0FwZ6SHa38gkfr7PW5S4jTToNlhiSE7iwwptLS_k6udU51eyChETtlZUQ5HCAFJjPZ5GH-c88F?gv=true" id="calendrier"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
+  <script>
+    //Pour le menu déroulant 
+    const coachingBtn = document.getElementById('coachingBtn');
+    const coachingMenu = document.getElementById('coachingMenu');
+
+    coachingBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (coachingMenu.style.visibility === 'visible') {
+        coachingMenu.style.visibility = 'hidden';
+        coachingMenu.style.opacity = '0';
+      } else {
+        coachingMenu.style.display = 'block'; // force le bloc
+        coachingMenu.style.visibility = 'visible';
+        coachingMenu.style.opacity = '1';
+      }
+    });
+
+    // Fermer si on clique ailleurs
+    document.addEventListener('click', function(e) {
+      if (!coachingBtn.contains(e.target) && !coachingMenu.contains(e.target)) {
+        coachingMenu.style.visibility = 'hidden';
+        coachingMenu.style.opacity = '0';
+      }
+    });
+    //fin du menu déroulant
+  </script>
+</body>
+</html>
