@@ -98,7 +98,7 @@
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  font-size: clamp(1rem, 2vw + 1vh, 1.6rem);
+  font-size: clamp(1.1rem, 2vw + 1vh, 1.6rem);
 }
 
 #calendrier {
@@ -109,3 +109,4 @@
   margin-top: 10vh;
 
 }
+
